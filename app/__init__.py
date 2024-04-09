@@ -21,7 +21,7 @@ def unauthorized_response(callback):
 
 
 @jwt.expired_token_loader
-def expired_token_response():
+def expired_token_response(jwt_header, jwt_payload):
     return jsonify({"message": "Token telah kedaluwarsa. Silakan login ulang."}), 401
 
 
